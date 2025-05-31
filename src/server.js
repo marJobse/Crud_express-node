@@ -1,20 +1,53 @@
 const express = require("express");
 const app = express();
+
+const jwt = require("jsonwebtoken");
+const { secretKey, userToValidate } = require("./auth.js");
+const verifyToken = require("./verifyToken.js");
 const bodyParser = require("body-parser");
 
 const { connectToMongoDB, disconnectFromMongoDB } = require("./mongodb.js");
 const PORT = process.env.PORT || 3008;
 
-//const connectToDB = async () => { // está en cada endpoint, al ppio
-// await MongoClient.connection();
-//};
-
 app.use(bodyParser.json());
+
 app.use((req, res, next) => {
   res.header("Content-type", "application/json; charset=utf-8"); // tenia "," en "/json," --> error: {invalida media type}
   next();
 });
 
+// login de usuario, para generar su JWT
+app.post("/login", (req, res) => {
+  const usuarios = userToValidate;
+  const username = req.body.username;
+  const password = req.body.password;
+  console.log(
+    "Datos recibidos: Usuario: " + username + " Password: " + password
+  );
+  const usuario_consultado = usuarios.find(
+    (user) => user.username === username
+  );
+
+  if (usuario_consultado) {
+    if (password === usuario_consultado.password) {
+      const token = jwt.sign({ username: username }, secretKey, {
+        expiresIn: "1h",
+      });
+      res.json({ token: token });
+    } else {
+      res.status(401).json({ error: "Contraseña inválida" });
+    }
+  } else {
+    res.status(401).json({ error: "Usuario no encontrado" });
+  }
+});
+
+app.get("/rutaProtegida", verifyToken, (req, res, next) => {
+  const username = req.decoded.username;
+  res.json({ mensaje: "Hola " + username + " ,esta ruta esta protegida" });
+
+  next();
+});
 app.get("/", (req, res) => {
   res.status(200).end("<h1> Bienvenidos a la API de frutas RESTful </h1>");
 });
@@ -198,6 +231,7 @@ app.delete("/frutas/:id", async (req, res) => {
       client.close();
     });
 });
+
 app.use((req, res) => {
   // para manejar rutas inexistentes
   res.status(404).send("Lo siento, la página buscada no existe");
