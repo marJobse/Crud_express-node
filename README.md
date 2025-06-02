@@ -1,16 +1,22 @@
-Testeo de la API Restful
-Listado básico de pruebas que debemos realizar:
+# API RESTful de Frutas 🍎🍌🍍
 
- ● la URL o ruta principal
- 
- ● la URL general para visualizar todos los productos
- 
- ● la URL que nos retorna un producto por su ID, por su nombre, y por un precio aproximado (get)
- 
- ● la URL que nos permite dar de alta un recurso (post)
- 
- ● la URL que nos permite modificar un recurso existente (put)
- 
- ● la URL que nos permite eliminar un recurso (delete)
- 
- ● la URL que nos permite modifica un recurso en el servidor, donde solo podemos indicarle una propiedad única en lugar de tener que indicarle la estructura completa del documento (patch)
+## Sumario
+- [Introducción](#introducción)
+- [Configuración](#configuración)
+- [Endpoints](#endpoints)
+- [Ejemplos de uso](#ejemplos-de-uso)
+  - [GET /frutas](#get-frutas)
+  - [GET /frutas/:id](#get-frutasid)
+  - [GET /frutas/nombre/:nombre](#get-frutasnombrenombre)
+  - [GET /frutas/precio/:precio](#get-frutasprecioprecio)
+  - [POST /frutas](#post-frutas)
+  - [PUT /frutas/:id](#put-frutasid)
+  - [DELETE /frutas/:id](#delete-frutasid)
+- [Ejemplo .env](#ejemplo-env)
+- [Diagrama del sistema](#diagrama-del-sistema)
+
+## Introducción
+
+Esta API permite realizar operaciones CRUD sobre frutas almacenadas en una base de datos MongoDB.  
+La URL base es:  
+
