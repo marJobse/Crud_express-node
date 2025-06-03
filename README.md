@@ -14,7 +14,7 @@
     - [GET /frutas/nombre/:nombre](#get-frutasnombrenombre)
     - [GET /frutas/precio/:precio](#get-frutasprecioprecio)
     - [POST /frutas](#post-frutas)
-    - [DELETE /frutas/:id](#delete-frutasid)
+    - [PUT /frutas/:id](#put-frutasid)
   - [Diagrama del sistema](#diagrama-del-sistema)
 
 ## Introducción
@@ -82,35 +82,33 @@ http://localhost:3008/frutas/precio/200
 
 ### POST /frutas
 
-    http://localhost:3008/frutas
-
-Cuerpo del mensaje
-´´´ javascript
+´´´http://localhost:3008/frutas
+´´´
+javascript
 {
 "id": 10,
 "nombre": "mango",
 "importe": 250
 }
 
-```
-
 ### PUT /frutas/:id
 
-    http://localhost:3008/frutas/10
+´´´http://localhost:3008/frutas/10
+´´´
 
-Cuerpo del mensaje
-´´´ javascript
+    javascript
+
 {
-    "nombre": "mango maduro",
-    "importe": 280
+"nombre": "mango maduro",
+"importe": 280
 }
-```
+
+````
 
 ### DELETE /frutas/:id
 
-```
-http://localhost:3008/frutas/10
-```
+```http://localhost:3008/frutas/10
+````
 
 ## Diagrama del sistema
 
