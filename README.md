@@ -96,7 +96,8 @@ Cuerpo del mensaje
 
 ### PUT /frutas/:id
 
-```http://localhost:3008/frutas/10
+```
+http://localhost:3008/frutas/10
 
 Cuerpo del mensaje
  '{
