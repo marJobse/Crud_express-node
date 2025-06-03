@@ -101,7 +101,7 @@ http://localhost:3008/frutas/precio/200
     {
     "nombre": "mango maduro",
     "importe": 280
-    }```
+    }
 ````
 
 ### DELETE /frutas/:id
