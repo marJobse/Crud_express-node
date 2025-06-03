@@ -15,6 +15,7 @@
     - [GET /frutas/precio/:precio](#get-frutasprecioprecio)
     - [POST /frutas](#post-frutas)
     - [PUT /frutas/:id](#put-frutasid)
+    - [DELETE /frutas/:id](#delete-frutasid)
   - [Diagrama del sistema](#diagrama-del-sistema)
 
 ## Introducción
@@ -98,17 +99,16 @@ javascript
 
     javascript
 
-{
-"nombre": "mango maduro",
-"importe": 280
-}
-
-````
+    {
+    "nombre": "mango maduro",
+    "importe": 280
+    }
 
 ### DELETE /frutas/:id
 
 ```http://localhost:3008/frutas/10
-````
+
+```
 
 ## Diagrama del sistema
 
