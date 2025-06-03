@@ -3,7 +3,6 @@
 ## Sumario
 
 - [API RESTful de Frutas 🍎🍌🍍](#api-restful-de-frutas-)
-  - [Sumario](#sumario)
   - [Introducción](#introducción)
   - [Configuración](#configuración)
   - [Ejemplo `.env`](#ejemplo-env)
