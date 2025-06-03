@@ -82,9 +82,7 @@ http://localhost:3008/frutas/precio/200
 
 ### POST /frutas
 
-```
-http://localhost:3008/frutas
-```
+    http://localhost:3008/frutas
 
 Cuerpo del mensaje
 ´´´ javascript
@@ -92,23 +90,20 @@ Cuerpo del mensaje
 "id": 10,
 "nombre": "mango",
 "importe": 250
-}'
+}
 
 ```
 
 ### PUT /frutas/:id
 
-```
+    http://localhost:3008/frutas/10
 
-http://localhost:3008/frutas/10
-
-```
 Cuerpo del mensaje
 ´´´ javascript
 {
     "nombre": "mango maduro",
     "importe": 280
-}'
+}
 ```
 
 ### DELETE /frutas/:id
