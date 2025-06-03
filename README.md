@@ -83,19 +83,18 @@ http://localhost:3008/frutas/precio/200
 
 ### POST /frutas
 
-´´´http://localhost:3008/frutas
-´´´
-javascript
-{
-"id": 10,
-"nombre": "mango",
-"importe": 250
-}
+    http://localhost:3008/frutas
+
+    javascript
+    {
+    "id": 10,
+    "nombre": "mango",
+    "importe": 250
+    }
 
 ### PUT /frutas/:id
 
-´´´http://localhost:3008/frutas/10
-´´´
+    http://localhost:3008/frutas/10
 
     javascript
 
@@ -106,9 +105,7 @@ javascript
 
 ### DELETE /frutas/:id
 
-```http://localhost:3008/frutas/10
-
-```
+    http://localhost:3008/frutas/10
 
 ## Diagrama del sistema
 
