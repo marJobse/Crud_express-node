@@ -3,6 +3,7 @@
 ## Sumario
 
 - [API RESTful de Frutas 🍎🍌🍍](#api-restful-de-frutas-)
+  - [Sumario](#sumario)
   - [Introducción](#introducción)
   - [Configuración](#configuración)
   - [Ejemplo `.env`](#ejemplo-env)
@@ -13,7 +14,6 @@
     - [GET /frutas/nombre/:nombre](#get-frutasnombrenombre)
     - [GET /frutas/precio/:precio](#get-frutasprecioprecio)
     - [POST /frutas](#post-frutas)
-    - [PUT /frutas/:id](#put-frutasid)
     - [DELETE /frutas/:id](#delete-frutasid)
   - [Diagrama del sistema](#diagrama-del-sistema)
 
@@ -84,22 +84,28 @@ http://localhost:3008/frutas/precio/200
 
 ```
 http://localhost:3008/frutas
+```
 
 Cuerpo del mensaje
- '{
-    "id": 10,
-    "nombre": "mango",
-    "importe": 250
+´´´ javascript
+{
+"id": 10,
+"nombre": "mango",
+"importe": 250
 }'
+
 ```
 
 ### PUT /frutas/:id
 
 ```
+
 http://localhost:3008/frutas/10
 
+```
 Cuerpo del mensaje
- '{
+´´´ javascript
+{
     "nombre": "mango maduro",
     "importe": 280
 }'
