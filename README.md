@@ -85,23 +85,24 @@ http://localhost:3008/frutas/precio/200
 
     http://localhost:3008/frutas
 
-    javascript
+```javascript
     {
     "id": 10,
     "nombre": "mango",
     "importe": 250
     }
+```
 
 ### PUT /frutas/:id
 
     http://localhost:3008/frutas/10
 
-    javascript
-
+````javascript
     {
     "nombre": "mango maduro",
     "importe": 280
-    }
+    }```
+````
 
 ### DELETE /frutas/:id
 
